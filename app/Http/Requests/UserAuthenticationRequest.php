@@ -21,7 +21,7 @@ class UserAuthenticationRequest extends FormRequest
      */
     public function rules(): array
     {
-        if ($this->is('api/v1/user/register')) {
+        if ($this->is('api/v1/user/registration')) {
             return [
                 'name' => ['required', 'string'],
                 'email' => ['required', 'email', 'unique:users,email'],
@@ -36,7 +36,7 @@ class UserAuthenticationRequest extends FormRequest
 
         return [];
 
-         // return [
+        // return [
         //     'name' => ['required', 'string'],
         //     'email' => ['required', 'email', 'unique:users,email'],
         //     'password' => ['required', 'min:6']
